@@ -27,4 +27,26 @@
     <string name="permission_request_phone_description">Please allow Phone permissions for this app</string>
     <string name="user_email">Enter your e-mail</string>
     <string name="delete_user">Delete User</string>
+
+    <string name="invalid_phone">Invalid mobile number.</string>
+    <string name="password_verification_code_over_limit">The number of verification code inputs for password-based sign-in exceeds the upper limit.</string>
+    <string name="password_verify_code_error">Incorrect password or verification code.</string>
+    <string name="verify_code_error">Incorrect verification code.</string>
+    <string name="verify_code_format_error">Incorrect verification code format.</string>
+    <string name="verify_code_and_password_both_null">The verification code or password cannot be empty.</string>
+    <string name="verify_code_empty">The verification code is empty.</string>
+    <string name="verify_code_language_empty">The language for sending a verification code is empty.</string>
+    <string name="verify_code_receiver_empty">The verification code receiver is empty.</string>
+    <string name="verify_code_action_error">The verification code type is empty.</string>
+    <string name="verify_code_time_limit">The number of times for sending verification codes exceeds the upper limit.</string>
+    <string name="account_password_same">The password cannot be the same as the user name.</string>
+    <string name="user_have_been_registered">The user already exists.</string>
+    <string name="provider_user_have_been_linked">The authentication mode has been associated with another user.</string>
+    <string name="user_not_registered">The user has not been registered.</string>
+    <string name="provider_have_linked_one_user">The authentication mode has already been associated with the user.</string>
+    <string name="cannot_unlink_one_provider_user">Cannot disassociate a single authentication mode.</string>
+    <string name="auth_method_is_disabled">The authentication mode is not supported.</string>
+    <string name="fail_to_get_third_user_info">Failed to obtain the third-party user information.</string>
+
+    <string name="user_info_formatted_string">displayName: %1$s \nUID: %2$s \nemail: %3$s\nisEmailVerified: %4$d\nisAnonymous: %5$b\npasswordSetted: %6$d\nphone: %7$s\nproviderType: %8$s\nproviderId: %9$s\nproviderInfo: %10$s</string>
 </resources>

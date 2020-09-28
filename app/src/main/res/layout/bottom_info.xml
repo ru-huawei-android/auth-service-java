@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:layout_weight="1"
         android:textAlignment="center"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,7 +24,6 @@
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:layout_gravity="center"
-        android:layout_weight="1"
         android:contentDescription="@string/user_profile_photo"
         tools:srcCompat="@tools:sample/avatars" />
 </LinearLayout>

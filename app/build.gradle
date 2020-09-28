@@ -1,34 +1,34 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "30.0.2"
-
+    compileSdkVersion 30
+    buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "com.example.authservice"
-        minSdkVersion 21
-        targetSdkVersion 29
+        minSdkVersion 22
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
     signingConfigs {
         release {
-            storeFile file("huaweisamplekey.store")
-            keyAlias "key0"
-            storePassword "123456"
-            keyPassword "123456"
-            v1SigningEnabled true
-            v2SigningEnabled true
+            release {
+                storeFile file("HuaweiSampleKey.jks")
+                storePassword "HuaweiSampleKey"
+                keyAlias "HuaweiSampleKey"
+                keyPassword "HuaweiSampleKey"
+            }
         }
         debug {
-            storeFile file("huaweisamplekey.store")
-            keyAlias "key0"
-            storePassword "123456"
-            keyPassword "123456"
-            v1SigningEnabled true
-            v2SigningEnabled true
+            release {
+                storeFile file("HuaweiSampleKey.jks")
+                storePassword "HuaweiSampleKey"
+                keyAlias "HuaweiSampleKey"
+                keyPassword "HuaweiSampleKey"
+            }
         }
     }
     buildTypes {
@@ -39,12 +39,15 @@ android {
             signingConfig signingConfigs.release
         }
         debug {
-            signingConfig signingConfigs.release
+            signingConfig signingConfigs.debug
         }
     }
     compileOptions {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 }
 
@@ -61,10 +64,11 @@ dependencies {
 
     // Если вы используете proguard, правила можно скопировать из файла proguard-project.txt
 
-    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "androidx.core:core-ktx:1.3.1"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
-    implementation 'androidx.navigation:navigation-ui:2.3.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
 
     // HMS
     implementation 'com.huawei.hms:hwid:4.0.1.301'
@@ -75,14 +79,14 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:18.1.0'
 
     //Google Play Game
-    implementation 'com.google.android.gms:play-services-games:19.0.0'
+    implementation 'com.google.android.gms:play-services-games:20.0.1'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
-    implementation "com.google.android.material:material:1.1.0"
+    implementation 'com.google.android.material:material:1.2.1'
     //noinspection GradleDependency
     implementation 'net.openid:appauth:0.2.0' /** Нам нужна версия 0.2.0 на ней базируется кодлаба от Google*/
 
     //Singleton artifact
-    implementation "io.coil-kt:coil:0.9.5"
+    implementation 'io.coil-kt:coil:0.13.0'
 
     // Facebook
     implementation 'com.facebook.android:facebook-android-sdk:4.20.0'
@@ -90,10 +94,6 @@ dependencies {
     // Twitter
     implementation 'com.twitter.sdk.android:twitter-core:3.3.0'
 
-    // Test
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
 
 apply plugin: 'com.huawei.agconnect'

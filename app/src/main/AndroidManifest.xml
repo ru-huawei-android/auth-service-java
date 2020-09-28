@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.huawei.hms.sample2">
+    package="com.huawei.hms.auth">
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -23,7 +23,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.huawei.hms.auth.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,7 +32,7 @@
         </activity>
 
         <activity
-            android:name=".FacebookActivity"
+            android:name="com.huawei.hms.auth.FacebookActivity"
             android:label="@string/facebook_login">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
@@ -61,42 +61,42 @@
         </activity>
 
         <activity
-            android:name=".PhoneActivity"
+            android:name="com.huawei.hms.auth.PhoneActivity"
             android:label="@string/mobile_phone_number_login">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".TwitterActivity"
+            android:name="com.huawei.hms.auth.TwitterActivity"
             android:label="@string/twitter_login">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".EmailActivity"
+            android:name="com.huawei.hms.auth.EmailActivity"
             android:label="@string/e_mail_login">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".AnonimousLogin"
+            android:name="com.huawei.hms.auth.AnonymousLogin"
             android:label="@string/anonymous_login">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".HuaweiIdActivity"
+            android:name="com.huawei.hms.auth.HuaweiIdActivity"
             android:label="@string/huawei_id_login">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".HuaweiGameIdActivity"
+            android:name="com.huawei.hms.auth.HuaweiGameIdActivity"
             android:label="@string/huawei_game_service_login">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
@@ -104,7 +104,7 @@
         </activity>
 
         <activity
-            android:name=".GoogleActivity"
+            android:name="com.huawei.hms.auth.GoogleActivity"
             android:label="@string/google_login">
             <intent-filter>
                 <action android:name="com.example.authservice.HANDLE_AUTHORIZATION_RESPONSE" />

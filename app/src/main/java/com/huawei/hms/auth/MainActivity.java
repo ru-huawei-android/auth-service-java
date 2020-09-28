@@ -1,4 +1,4 @@
-package com.huawei.hms.sample2;
+package com.huawei.hms.auth;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -39,8 +39,8 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.btnHwidLogin).setOnClickListener(v -> navigateToHwidLogin());
         findViewById(R.id.btnHwGameLogin).setOnClickListener(v -> navigateToHwGameLogin());
         findViewById(R.id.btnGoogleLogin).setOnClickListener(v -> navigateToGoogleLogin());
-        findViewById(R.id.btnFbLogin).setOnClickListener(v->navigateToFbLogin());
-        findViewById(R.id.btnTwLogin).setOnClickListener(v->navigateToTwLogin()) ;
+        findViewById(R.id.btnFbLogin).setOnClickListener(v -> navigateToFbLogin());
+        findViewById(R.id.btnTwLogin).setOnClickListener(v -> navigateToTwLogin());
         findViewById(R.id.btnDeleteUser).setOnClickListener(v -> {
             AGConnectAuth.getInstance().deleteUser();
             logout();
@@ -75,7 +75,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void navigateToAnonymousLogin() {
-        startActivity(new Intent(this, AnonimousLogin.class));
+        startActivity(new Intent(this, AnonymousLogin.class));
         overridePendingTransition(0, 0);
     }
 
@@ -94,13 +94,13 @@ public class MainActivity extends BaseActivity {
         overridePendingTransition(0, 0);
     }
 
-    private void navigateToFbLogin(){
-        startActivity(new Intent(this ,FacebookActivity.class));
+    private void navigateToFbLogin() {
+        startActivity(new Intent(this, FacebookActivity.class));
         overridePendingTransition(0, 0);
     }
 
-    private void navigateToTwLogin(){
-        startActivity(new Intent(this,TwitterActivity.class));
+    private void navigateToTwLogin() {
+        startActivity(new Intent(this, TwitterActivity.class));
         overridePendingTransition(0, 0);
     }
 }

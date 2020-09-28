@@ -16,7 +16,6 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:contentDescription="@string/logo"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/logo"
@@ -26,7 +25,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="fill|fill_horizontal"
-            android:layout_weight="1"
             android:gravity="center"
             android:text="@string/auth_service_test_sample_project"
             android:textColor="#3F51B5"
@@ -48,77 +46,66 @@
                 android:id="@+id/btnPhoneLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="@string/mobile_phone_number_login" />
 
             <Button
                 android:id="@+id/btnEmailLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="@string/e_mail_login" />
 
             <Button
                 android:id="@+id/btnHwidLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="@string/huawei_id_login" />
 
             <Button
                 android:id="@+id/btnHwGameLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="@string/huawei_game_service_login" />
 
             <Button
                 android:id="@+id/btnFbLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="@string/facebook_login" />
 
             <Button
                 android:id="@+id/btnTwLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="@string/twitter_login" />
 
             <Button
                 android:id="@+id/btnGoogleLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="@string/google_login" />
 
             <Button
                 android:id="@+id/btnAnonymousLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="@string/anonymous_login" />
 
             <Button
                 android:id="@+id/btnLogout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="@string/logout" />
 
             <Button
                 android:id="@+id/btnDeleteUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="@string/delete_user" />
 
             <include
                 layout="@layout/bottom_info"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </ScrollView>
 
