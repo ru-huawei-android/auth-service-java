@@ -37,8 +37,8 @@ import com.huawei.hms.support.hwid.service.HuaweiIdAuthService;
 public class HuaweiGameIdActivity extends BaseActivity {
     private final String TAG = HuaweiGameIdActivity.class.getSimpleName();
 
-    private final int HUAWEIGAME_SIGNIN = 7000;
-    private final int LINK_CODE = 7002;
+    private final static int HUAWEIGAME_SIGNIN = 7000;
+    private final static int LINK_CODE = 7002;
 
     private HuaweiIdAuthService huaweiIdAuthService;
 
@@ -48,7 +48,7 @@ public class HuaweiGameIdActivity extends BaseActivity {
         //Do not call here setContentView()
 
         HuaweiMobileServicesUtil.setApplication(getApplication());
-        JosAppsClient appsClient = JosApps.getJosAppsClient(this, null);
+        JosAppsClient appsClient = JosApps.getJosAppsClient(this);
         appsClient.init();
         HuaweiIdAuthParams authParams = new HuaweiIdAuthParamsHelper(HuaweiIdAuthParams.DEFAULT_AUTH_REQUEST_PARAM).createParams();
         huaweiIdAuthService = HuaweiIdAuthManager.getService(this, authParams);

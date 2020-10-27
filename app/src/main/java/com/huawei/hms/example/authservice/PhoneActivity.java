@@ -46,8 +46,6 @@ public class PhoneActivity extends BaseActivity {
      */
     Boolean credentialType;
 
-    private String[] permissions = new String[]{READ_PHONE_STATE, READ_PHONE_NUMBERS};
-
     private EditText editTextPhone;
     private EditText editTextVerificationCode;
     private Button btnPhoneCode;
@@ -287,7 +285,11 @@ public class PhoneActivity extends BaseActivity {
      */
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void requestStoragePermissions() {
-        ActivityCompat.requestPermissions(this, permissions, 1);
+        ActivityCompat.requestPermissions(
+                this,
+                new String[]{READ_PHONE_STATE, READ_PHONE_NUMBERS},
+                1
+        );
     }
 
     /**

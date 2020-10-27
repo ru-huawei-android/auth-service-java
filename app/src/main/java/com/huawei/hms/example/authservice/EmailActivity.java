@@ -71,7 +71,7 @@ public class EmailActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        /** Проверяем наличие текущего уже авторизированного пользователя*/
+        /* Проверяем наличие текущего уже авторизированного пользователя*/
         AGConnectUser currentUser = AGConnectAuth.getInstance().getCurrentUser();
         if (currentUser != null) {
             tvResults.setText(getUserInfo(currentUser));

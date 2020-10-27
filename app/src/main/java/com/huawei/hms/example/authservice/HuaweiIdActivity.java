@@ -17,27 +17,26 @@ import com.huawei.hms.support.hwid.request.HuaweiIdAuthParamsHelper;
 import com.huawei.hms.support.hwid.result.AuthHuaweiId;
 import com.huawei.hms.support.hwid.service.HuaweiIdAuthService;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class HuaweiIdActivity extends BaseActivity {
     private final String TAG = HuaweiIdActivity.class.getSimpleName();
-    private final int HUAWEI_ID_SIGNIN = 8000;
-    private final int LINK_CODE = 8002;
+    private final static int HUAWEI_ID_SIGNIN = 8000;
+    private final static int LINK_CODE = 8002;
 
     private HuaweiIdAuthService huaweiIdAuthService;
-    private HuaweiIdAuthParams huaweiIdAuthParams;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //Do not call here setContentView()
 
-        List<Scope> scopeList = Arrays.asList(new Scope(HwIDConstant.SCOPE.ACCOUNT_BASEPROFILE));
+        List<Scope> scopeList = Collections.singletonList(new Scope(HwIDConstant.SCOPE.ACCOUNT_BASEPROFILE));
         HuaweiIdAuthParamsHelper authParamsHelper = new HuaweiIdAuthParamsHelper(HuaweiIdAuthParams.DEFAULT_AUTH_REQUEST_PARAM);
         authParamsHelper.setScopeList(scopeList);
 
-        huaweiIdAuthParams = authParamsHelper.setAccessToken().createParams();
+        HuaweiIdAuthParams huaweiIdAuthParams = authParamsHelper.setAccessToken().createParams();
         huaweiIdAuthService = HuaweiIdAuthManager.getService(this, huaweiIdAuthParams);
 
         btnLogin.setOnClickListener(v -> login());
