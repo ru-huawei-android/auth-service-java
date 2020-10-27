@@ -1,4 +1,4 @@
-package com.huawei.hms.auth;
+package com.huawei.hms.example.authservice;
 
 import android.os.Bundle;
 import android.util.Log;

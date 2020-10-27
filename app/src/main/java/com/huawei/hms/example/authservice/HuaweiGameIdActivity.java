@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.huawei.hms.auth;
+package com.huawei.hms.example.authservice;
 
 import android.content.Intent;
 import android.os.Bundle;

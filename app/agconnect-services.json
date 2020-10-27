@@ -4,19 +4,25 @@
 		"url":"connect-drru.hispace.hicloud.com"
 	},
 	"client":{
-		"cp_id":"1340007000004680063",
-		"product_id":"736430079244445895",
-		"client_id":"360900346140165184",
-		"client_secret":"B13D2C5DDCBFFA2D7E197741903DCD84E772E7B8C4D0F4637D0DE32245E8A62E",
-		"app_id":"102204573",
-		"package_name":"com.example.authservice",
-		"api_key":"CV7iQ2Aj6pEHXD6RLi+YDEnhlVHSxrKcgnGjRni7A4j4If2mXHR1fyHBFUabbSUgg/kjCww1KvgDOhByRrv9dAWd/PI6"
+		"cp_id":"1340007000006332998",
+		"product_id":"736430079244678766",
+		"client_id":"481910729889285120",
+		"client_secret":"728D2772B2A13F0E5548F11D3E79F1AF87C5F995532D8EE93B440E71A5A0B882",
+		"app_id":"103136459",
+		"package_name":"com.huawei.hms.example.authservice",
+		"api_key":"CgB6e3x9Pi+4+PsyFXBOwykdK+rNWB9GlXT83ZfU4hs/oGxCLw0ungYLdZhLNzCPANa96rClyr4QzXGH3D0B9YXQ"
 	},
 	"service":{
 		"analytics":{
 			"collector_url":"datacollector-drru.dt.hicloud.com,datacollector-drru.dt.dbankcloud.cn",
 			"resource_id":"p1",
 			"channel_id":""
+		},
+		"search":{
+			"url":"https://search-drru.cloud.huawei.com"
+		},
+		"cloudstorage":{
+			"storage_url":"https://agc-storage-drru.platform.dbankcloud.cn"
 		},
 		"ml":{
 			"mlservice_url":"ml-api-drru.ai.dbankcloud.com,ml-api-drru.ai.dbankcloud.cn"
