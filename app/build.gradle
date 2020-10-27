@@ -14,20 +14,16 @@ android {
     }
     signingConfigs {
         release {
-            release {
-                storeFile file("HuaweiSampleKey.jks")
-                storePassword "HuaweiSampleKey"
-                keyAlias "HuaweiSampleKey"
-                keyPassword "HuaweiSampleKey"
-            }
+            storeFile file("HuaweiSampleKey.jks")
+            storePassword "HuaweiSampleKey"
+            keyAlias "HuaweiSampleKey"
+            keyPassword "HuaweiSampleKey"
         }
         debug {
-            release {
-                storeFile file("HuaweiSampleKey.jks")
-                storePassword "HuaweiSampleKey"
-                keyAlias "HuaweiSampleKey"
-                keyPassword "HuaweiSampleKey"
-            }
+            storeFile file("HuaweiSampleKey.jks")
+            storePassword "HuaweiSampleKey"
+            keyAlias "HuaweiSampleKey"
+            keyPassword "HuaweiSampleKey"
         }
     }
     buildTypes {
