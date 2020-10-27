@@ -1,4 +1,4 @@
-package com.huawei.hms.auth;
+package com.huawei.hms.example.authservice;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -199,7 +199,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             tvResults.setText(getUserInfo(AGConnectAuth.getInstance().getCurrentUser()));
             // проверяем кол-во привязанных провайдеров*/
             if (getAGConnectUser().getProviderInfo() != null && getAGConnectUser().getProviderInfo().size() > 1
-                    /** Если один из них = providerId*/
+                    /* Если один из них = providerId*/
                     && isProviderLinked(getAGConnectUser(), providerId)) {
                 // то меняем текст кнопки*/
                 btnLogin.setVisibility(View.GONE);

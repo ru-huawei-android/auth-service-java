@@ -1,4 +1,4 @@
-package com.huawei.hms.auth;
+package com.huawei.hms.example.authservice;
 
 import android.app.PendingIntent;
 import android.content.Intent;
