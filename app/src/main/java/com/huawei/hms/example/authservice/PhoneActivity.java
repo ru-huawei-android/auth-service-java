@@ -112,12 +112,17 @@ public class PhoneActivity extends BaseActivity {
             phoneNumber = getPhoneNumberFromTelephony();
             editTextPhone.setText(phoneNumber);
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
         registerReceiver(br, new IntentFilter(ReadSmsConstant.READ_SMS_BROADCAST_ACTION));
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    protected void onStop() {
+        super.onStop();
         unregisterReceiver(br);
     }
 
@@ -159,7 +164,12 @@ public class PhoneActivity extends BaseActivity {
         });
     }
 
-    private BroadcastReceiver br = new BroadcastReceiver() {
+    /**
+     *  BroadcastReceiver in order to read incoming sms and fill in the verification field.
+     *  Read more: https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides-V5/readsmsmanager-0000001050050861-V5
+     */
+
+    private final BroadcastReceiver br = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             Bundle bundle = intent.getExtras();
