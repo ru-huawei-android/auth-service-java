@@ -186,7 +186,7 @@ public class PhoneActivity extends BaseActivity {
                         // An SMS message that meets the requirement is read. The service process ends.
                         String result = bundle.getString(ReadSmsConstant.EXTRA_SMS_MESSAGE);
                         String numberOnly = result.replaceAll("[^0-9]", "");
-                        showToast(getString(R.string.success) + numberOnly);
+                        showToast(String.format("%s %s", getString(R.string.success), numberOnly));
                         editTextVerificationCode.setText(numberOnly);
                     }
                 }
