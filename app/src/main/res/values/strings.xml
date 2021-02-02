@@ -49,4 +49,7 @@
     <string name="fail_to_get_third_user_info">Failed to obtain the third-party user information.</string>
 
     <string name="user_info_formatted_string">displayName: %1$s \nUID: %2$s \nemail: %3$s\nisEmailVerified: %4$d\nisAnonymous: %5$b\npasswordSetted: %6$d\nphone: %7$s\nproviderType: %8$s\nproviderId: %9$s\nproviderInfo: %10$s</string>
+    <string name="time_out">Time out</string>
+    <string name="success">Success: %1$s</string>
+    <string name="start_reading_sms">start reading sms…</string>
 </resources>
