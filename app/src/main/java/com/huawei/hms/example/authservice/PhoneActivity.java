@@ -159,7 +159,7 @@ public class PhoneActivity extends BaseActivity {
         Task<Void> task = ReadSmsManager.startConsent(this, null);
         task.addOnCompleteListener(task1 -> {
             if (task1.isSuccessful()) {
-                showToast("start reading sms...");
+                showToast(getString(R.string.start_reading_sms));
             }
         });
     }
@@ -179,14 +179,14 @@ public class PhoneActivity extends BaseActivity {
                 if (status.getStatusCode() == CommonStatusCodes.TIMEOUT) {
 
                     // The service has timed out and no SMS message that meets the requirements is read. The service process ends.
-                    showToast("Time out");
+                    showToast(getString(R.string.time_out));
                 } else if (status.getStatusCode() == CommonStatusCodes.SUCCESS) {
                     if (bundle.containsKey(ReadSmsConstant.EXTRA_SMS_MESSAGE)) {
 
                         // An SMS message that meets the requirement is read. The service process ends.
                         String result = bundle.getString(ReadSmsConstant.EXTRA_SMS_MESSAGE);
-                        String numberOnly= result.replaceAll("[^0-9]", "");
-                        showToast("Success: " + numberOnly);
+                        String numberOnly = result.replaceAll("[^0-9]", "");
+                        showToast(getString(R.string.success) + numberOnly);
                         editTextVerificationCode.setText(numberOnly);
                     }
                 }
