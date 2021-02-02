@@ -1,7 +1,10 @@
 package com.huawei.hms.example.authservice;
 
 import android.annotation.SuppressLint;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -26,6 +29,10 @@ import com.huawei.agconnect.auth.PhoneUser;
 import com.huawei.agconnect.auth.VerifyCodeResult;
 import com.huawei.agconnect.auth.VerifyCodeSettings;
 import com.huawei.hmf.tasks.Task;
+import com.huawei.hms.common.api.CommonStatusCodes;
+import com.huawei.hms.support.api.client.Status;
+import com.huawei.hms.support.sms.ReadSmsManager;
+import com.huawei.hms.support.sms.common.ReadSmsConstant;
 
 import java.util.Locale;
 
@@ -69,6 +76,7 @@ public class PhoneActivity extends BaseActivity {
                 showToast("Please put the phone number");
                 return;
             }
+            startReadingSms();
             requestVerificationCode();
         });
 
@@ -104,6 +112,13 @@ public class PhoneActivity extends BaseActivity {
             phoneNumber = getPhoneNumberFromTelephony();
             editTextPhone.setText(phoneNumber);
         }
+        registerReceiver(br, new IntentFilter(ReadSmsConstant.READ_SMS_BROADCAST_ACTION));
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(br);
     }
 
     @Override
@@ -134,6 +149,40 @@ public class PhoneActivity extends BaseActivity {
         editTextPhone = findViewById(R.id.editTextPhone);
         editTextVerificationCode = findViewById(R.id.editTextVerificationCode);
     }
+
+    private void startReadingSms() {
+        Task<Void> task = ReadSmsManager.startConsent(this, null);
+        task.addOnCompleteListener(task1 -> {
+            if (task1.isSuccessful()) {
+                showToast("start reading sms...");
+            }
+        });
+    }
+
+    private BroadcastReceiver br = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Bundle bundle = intent.getExtras();
+
+            if (bundle != null && ReadSmsConstant.READ_SMS_BROADCAST_ACTION.equals(intent.getAction())) {
+                Status status = bundle.getParcelable(ReadSmsConstant.EXTRA_STATUS);
+                if (status.getStatusCode() == CommonStatusCodes.TIMEOUT) {
+
+                    // The service has timed out and no SMS message that meets the requirements is read. The service process ends.
+                    showToast("Time out");
+                } else if (status.getStatusCode() == CommonStatusCodes.SUCCESS) {
+                    if (bundle.containsKey(ReadSmsConstant.EXTRA_SMS_MESSAGE)) {
+
+                        // An SMS message that meets the requirement is read. The service process ends.
+                        String result = bundle.getString(ReadSmsConstant.EXTRA_SMS_MESSAGE);
+                        String numberOnly= result.replaceAll("[^0-9]", "");
+                        showToast("Success: " + numberOnly);
+                        editTextVerificationCode.setText(numberOnly);
+                    }
+                }
+            }
+        }
+    };
 
     private void requestVerificationCode() {
         editTextPhone.setEnabled(false);

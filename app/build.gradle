@@ -66,7 +66,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.1'
 
     // HMS
-    implementation 'com.huawei.hms:hwid:5.0.1.301'
+    implementation 'com.huawei.hms:hwid:5.1.0.301'
     implementation 'com.huawei.hms:game:5.0.3.301'
     implementation 'com.huawei.agconnect:agconnect-auth:1.4.1.300'
 
